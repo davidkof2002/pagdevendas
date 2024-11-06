@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso de Lógica de Programação</title>
+    <style>
+        /* Estilos gerais */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #000; /* Fundo preto */
+            color: #39FF14; /* Verde neon */
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1, h2 {
+            color: #ff0000; /* Verde neon */
+        }
+
+        /* Seção de destaque com imagem de fundo */
+        .hero {
+            position: relative;
+            padding: 60px 20px;
+            color: white;
+            background: url('https://via.placeholder.com/800x400.png?text=Curso+de+L%C3%B3gica+de+Programa%C3%A7%C3%A3o') no-repeat center center/cover;
+            border-radius: 10px;
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .hero h1 {
+            font-size: 3em;
+            margin: 0;
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            color: #ddd;
+        }
+
+        /* Benefícios com ícones */
+        .benefits ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .benefits li {
+            background: #111;
+            color: #39FF14;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #39FF14;
+            display: flex;
+            align-items: center;
+            transition: transform 0.3s;
+        }
+
+        .benefits li img {
+            width: 40px;
+            height: 40px;
+            margin-right: 15px;
+        }
+
+        .benefits li:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 10px #39FF14;
+        }
+
+        /* Botão de compra destacado */
+        .cta-button {
+            display: inline-block;
+            background-color: #ff0000; /* Cor chamativa */
+            color: #fff;
+            padding: 20px 30px;
+            text-decoration: none;
+            font-size: 1.5em;
+            font-weight: bold;
+            border-radius: 8px;
+            margin-top: 20px;
+            transition: 0.3s;
+            box-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000;
+        }
+
+        .cta-button:hover {
+            background-color: #cc0000;
+            transform: scale(1.1);
+            box-shadow: 0 0 20px #ff0000;
+        }
+
+        /* FAQ com interação */
+        .faq h3 {
+            cursor: pointer;
+            padding: 10px;
+            background-color: #111;
+            border: 1px solid #39FF14;
+            border-radius: 5px;
+            margin: 10px 0;
+            transition: background-color 0.3s;
+        }
+
+        .faq h3:hover {
+            background-color: #222;
+        }
+
+        .faq p {
+            display: none;
+            padding: 10px;
+            background-color: #222;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        /* Mostrar texto de FAQ ao clicar */
+        .faq h3.active + p {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Seção de destaque com imagem de fundo -->
+    <section>
+        <h1>Curso de Lógica de Programação</h1>
+        <p>Domine os fundamentos da programação com um curso completo e prático!</p>
+    </section>
+
+    <!-- Benefícios do Curso com Ícones -->
+    <section class="benefits">
+        <h2>O que você vai aprender:</h2>
+        <ul>
+            <li>
+                
+                Entender conceitos essenciais de lógica de programação
+            </li>
+            <li>
+               
+                Criar algoritmos para resolver problemas reais
+            </li>
+            <li>
+                
+                Receber certificado de conclusão reconhecido
+            </li>
+            <li>
+                
+                Exercícios e desafios para prática
+                <h3></h3>
+            </li>
+        </ul>
+    </section>
+
+    <!-- Depoimentos -->
+    <section class="testimonials">
+        <h2>Depoimentos de alunos</h2>
+        <p>“Esse curso me deu uma base sólida de lógica. Recomendo!” - <strong>João Silva</strong></p>
+        <p>“Excelente didática e conteúdo. Fácil de entender.” - <strong>Maria Oliveira</strong></p>
+    </section>
+
+    <!-- Botão de Compra Destacado -->
+    <section class="purchase">
+        <h2>Preço: <span style="color: #ff0000;">R$19,99</span></h2>
+        <a href="https://pay.kiwify.com.br/PqNri6e" class="cta-button" target="_blank">Compre Agora seu e Comece a Estudar!</a>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq">
+        <h2>Perguntas Frequentes</h2>
+        
+
+        <h3>1. Posso estudar no meu próprio ritmo?</h3>
+        <p>Sim, o curso é 100% online e você pode acessá-lo quando quiser.</p>
+
+        <h3>2. E se eu tiver dúvidas durante o curso?</h3>
+        <p>Oferecemos suporte por e-mail para responder suas dúvidas e ajudar no que for preciso.</p>
+    </section>
+</div>
+
+<script>
+    // Interatividade para FAQ (mostrar/ocultar respostas ao clicar)
+    document.querySelectorAll(".faq h3").forEach((faqTitle) => {
+        faqTitle.addEventListener("click", () => {
+            faqTitle.classList.toggle("active");
+            const answer = faqTitle.nextElementSibling;
+            answer.style.display = answer.style.display === "block" ? "none" : "block";
+        });
+    });
+</script>
+
+</body>
+</html>
